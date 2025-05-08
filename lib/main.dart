@@ -22,13 +22,15 @@ class ECommerceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Amajon'),
+        title: const Text('Amajon Store'),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             // Banner Promo
+            
             Container(
               margin: const EdgeInsets.all(16.0),
               padding: const EdgeInsets.all(16.0),
