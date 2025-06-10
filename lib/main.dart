@@ -30,7 +30,7 @@ class ECommerceScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              // Banner Promo
+              // bagian banner promo
               Container(
                 margin: const EdgeInsets.all(16.0),
                 padding: const EdgeInsets.all(16.0),
@@ -49,28 +49,29 @@ class ECommerceScreen extends StatelessWidget {
                 ),
               ),
 
-              // Baris info tambahan
+              // Menambahkanbaris dibawah banner promo
+              // Menambahkan row dengan ikon diskon, teks, dan ikon shipping
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Icon(Icons.discount, color: Colors.red),
+                    Icon(Icons.discount, color: Colors.red), // ikon diskon
                     SizedBox(width: 8.0),
                     Text(
                       'Gratis Ongkir Seluruh Indonesia',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(fontWeight: FontWeight.bold), // teks
                     ),
                     SizedBox(width: 8.0),
-                    Icon(Icons.local_shipping, color: Colors.green),
+                    Icon(Icons.local_shipping, color: Colors.green),  // icon shipping
                   ],
                 ),
               ),
 
-              // Produk 1
+              // Produk 1 
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                padding: const EdgeInsets.only(left: 24.0, top: 20.0, right: 16.0, bottom: 12.0),
+                padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(color: Colors.grey.shade300),
@@ -120,6 +121,7 @@ class ECommerceScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 6.0),
+                    // Menambahkan informasi estimasi pengiriman setelah harga
                     Row(
                       children: const [
                         Icon(Icons.local_shipping, size: 16.0, color: Colors.grey),
@@ -131,10 +133,10 @@ class ECommerceScreen extends StatelessWidget {
                 ),
               ),
 
-              // Produk 2
+              // Produk 2 
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                padding: const EdgeInsets.only(left: 16.0, top: 12.0, right: 24.0, bottom: 20.0),
+                padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                   color: Colors.green.shade50,
                   border: Border.all(color: Colors.grey.shade300),
@@ -184,6 +186,7 @@ class ECommerceScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 6.0),
+                    // Menambahkan informasi estimasi pengiriman setelah harga
                     Row(
                       children: const [
                         Icon(Icons.local_shipping, size: 16.0, color: Colors.grey),
@@ -195,23 +198,19 @@ class ECommerceScreen extends StatelessWidget {
                 ),
               ),
 
-              // Kategori Produk
+              // Ubah layout kategori menjadi fleksibel untuk layar kecil
               Container(
                 margin: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    Wrap(
+                      alignment: WrapAlignment.center,
+                      spacing: 32.0,
+                      runSpacing: 16.0,
                       children: const <Widget>[
                         CategoryItem(icon: Icons.shopping_bag, label: 'Pakaian'),
                         CategoryItem(icon: Icons.watch, label: 'Aksesoris'),
                         CategoryItem(icon: Icons.devices, label: 'Elektronik'),
-                      ],
-                    ),
-                    const SizedBox(height: 16.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const <Widget>[
                         CategoryItem(icon: Icons.kitchen, label: 'Peralatan'),
                         CategoryItem(icon: Icons.book, label: 'Buku'),
                         CategoryItem(icon: Icons.toys, label: 'Mainan'),
@@ -221,7 +220,7 @@ class ECommerceScreen extends StatelessWidget {
                 ),
               ),
 
-              // Footer Promo
+              // Bagian promo -- footer
               Container(
                 padding: const EdgeInsets.all(32.0),
                 color: Colors.orange.shade100,
@@ -245,7 +244,7 @@ class ECommerceScreen extends StatelessWidget {
   }
 }
 
-// Komponen Kategori Reusable
+// Komponen Reusable Kategori Produk 
 class CategoryItem extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -256,7 +255,7 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Icon(icon, color: Colors.blue),
+        Icon(icon, color: Colors.blue, size: 32),
         const SizedBox(height: 8.0),
         Text(label),
       ],
