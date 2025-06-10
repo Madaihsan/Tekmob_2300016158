@@ -49,7 +49,7 @@ class ECommerceScreen extends StatelessWidget {
                 ),
               ),
 
-              // Menambahkanbaris dibawah banner promo
+              // Tugas 3 -- Menambahkan baris dibawah banner promo
               // Menambahkan row dengan ikon diskon, teks, dan ikon shipping
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
@@ -121,7 +121,7 @@ class ECommerceScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 6.0),
-                    // Menambahkan informasi estimasi pengiriman setelah harga
+                    // Tugas 2 -- Menambahkan informasi estimasi pengiriman setelah harga
                     Row(
                       children: const [
                         Icon(Icons.local_shipping, size: 16.0, color: Colors.grey),
@@ -186,7 +186,7 @@ class ECommerceScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 6.0),
-                    // Menambahkan informasi estimasi pengiriman setelah harga
+                    // Tugas 2 -- Menambahkan informasi estimasi pengiriman setelah harga
                     Row(
                       children: const [
                         Icon(Icons.local_shipping, size: 16.0, color: Colors.grey),
@@ -198,19 +198,23 @@ class ECommerceScreen extends StatelessWidget {
                 ),
               ),
 
-              // Ubah layout kategori menjadi fleksibel untuk layar kecil
+              // TUGAS 1 -- Ubah layout kategori menjadi fleksibel/responsive untuk layar kecil
               Container(
                 margin: const EdgeInsets.all(16.0),
                 child: Column(
-                  children: [
-                    Wrap(
-                      alignment: WrapAlignment.center,
-                      spacing: 32.0,
-                      runSpacing: 16.0,
-                      children: const <Widget>[
+                  children: const [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
                         CategoryItem(icon: Icons.shopping_bag, label: 'Pakaian'),
                         CategoryItem(icon: Icons.watch, label: 'Aksesoris'),
                         CategoryItem(icon: Icons.devices, label: 'Elektronik'),
+                      ],
+                    ),
+                    SizedBox(height: 16.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
                         CategoryItem(icon: Icons.kitchen, label: 'Peralatan'),
                         CategoryItem(icon: Icons.book, label: 'Buku'),
                         CategoryItem(icon: Icons.toys, label: 'Mainan'),
